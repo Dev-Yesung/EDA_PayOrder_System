@@ -1,0 +1,25 @@
+package yesung.payment_service.payment.adapter.in.web.view;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import reactor.core.publisher.Mono;
+import yesung.payment_service.payment.common.WebAdapter;
+
+@Controller
+@WebAdapter
+@RequestMapping("/v1/toss")
+public class PaymentController {
+
+	@GetMapping("/success")
+	public Mono<String> successPage() {
+		return Mono.just("success");
+	}
+
+	@GetMapping("/fail")
+	public Mono<String> failPage() {
+		return Mono.just("fail");
+	}
+
+}
